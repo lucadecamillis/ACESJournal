@@ -59,6 +59,7 @@
 % Set the base font size tp 10pt using @ptsize.clo
 \newcommand\@ptsize{0}
 \def\sectionsize{\@setfontsize{\medium}{11}{12pt}}
+\def\subsectionsize{\@setfontsize{\medium}{10}{11pt}}
 \def\medium{\@setfontsize{\medium}{12}{14pt}}
 \def\titlesize{\@setfontsize{\titlesize}{14}{17pt}}
 %
@@ -255,19 +256,19 @@
 \newcommand\subsection{\@startsection{subsection}{2}{\z@}%
                                      {\@ACESvspace \@plus \@ACESglueStretch \@minus \@ACESglueShrink}%
                                      {.1ex}%
-                                     {\normalfont\normalsize\bfseries}}%
+                                     {\normalfont\subsectionsize\bfseries}}%
 \newcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
                                      {\@ACESvspace \@plus \@ACESglueStretch \@minus \@ACESglueShrink}%
                                      {.1ex}%
-                                     {\normalfont\normalsize\bfseries}}%
+                                     {\normalfont\subsectionsize\bfseries}}%
 \newcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
                                     {\@ACESvspace \@plus \@ACESglueStretch \@minus \@ACESglueShrink}%
                                     {.1ex}%
-                                    {\normalfont\normalsize\bfseries}}%
+                                    {\normalfont\subsectionsize\bfseries}}%
 \newcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
                                        {\@ACESvspace \@plus \@ACESglueStretch \@minus \@ACESglueShrink}%
                                        {.1ex}%
-                                      {\normalfont\normalsize\bfseries}}%
+                                      {\normalfont\subsectionsize\bfseries}}%
 %
 % Overwrite the section format defined in latex.ltx
 % to remove the space from the section numbering and the title
@@ -705,7 +706,9 @@
   January\or February\or March\or April\or May\or June\or
   July\or August\or September\or October\or November\or December\fi
   \space\number\day, \number\year}
-\setlength\columnsep{10\p@}
+
+% Set the column separation to .25 inches --> 18pt
+\setlength\columnsep{18\p@}
 \setlength\columnseprule{0\p@}
 \pagestyle{plain}
 % Remove page numbering
